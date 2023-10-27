@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `gimnasio_gym` /*!40100 DEFAULT CHARACTER SET latin1 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `gimansio_gym`;
+CREATE DATABASE  IF NOT EXISTS `proyecto-coder` /*!40100 DEFAULT CHARACTER SET latin1 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `proyecto-coder`;
 -- MySQL dump 10.13  Distrib 8.0.30, for macos12 (x86_64)
 --
--- Host: localhost    Database: gimansio_gym
+-- Host: localhost    Database: proyecto-coder
 -- ------------------------------------------------------
 -- Server version	8.0.30
 
@@ -296,11 +296,11 @@ INSERT INTO `usuarios` VALUES (11,'alesabio10','$2b$10$WRN7peegTQyC9iTA2UBB0OWzo
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'proyecto_silicon'
+-- Dumping events for database 'proyecto-coder'
 --
 
 --
--- Dumping routines for database 'proyecto_silicon'
+-- Dumping routines for database 'proyecto-coder'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -312,4 +312,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-08 22:15:43
+-- Dump completed on 2023-10-26 20:36:07
