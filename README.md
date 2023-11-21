@@ -29,9 +29,9 @@ El objetivo principal de esta base de datos es proporcionar una herramienta efic
 
 ## Pre-entregas del Proyecto Final
 
-Para acceder a las Pre-entregas del Proyecto Final, las cuales cuentan con información detallada sobre el diseño de la base de datos y su implementación, consulte la documentación adjunta en los siguientes archivos PDF:
+Para acceder a las Pre-Entregas del Proyecto Final, las cuales cuentan con información detallada sobre el diseño de la base de datos y su implementación, consulte la documentación adjunta en los siguientes archivos PDF:
 
-1. **[Informe de Entrega 1](https://docs.google.com/document/d/1msX8u_Xc83Zj-JVa2dURqtcH3dKcBjHX/edit?usp=sharing&ouid=113864567810544868681&rtpof=true&sd=true)** 
-2. **[Informe de Entrega 2](https://docs.google.com/document/d/1msX8u_Xc83Zj-JVa2dURqtcH3dKcBjHX/edit?usp=sharing&ouid=113864567810544868681&rtpof=true&sd=true)** 
+1. **[Pre-Entrega 1](https://docs.google.com/document/d/1msX8u_Xc83Zj-JVa2dURqtcH3dKcBjHX/edit?usp=sharing&ouid=113864567810544868681&rtpof=true&sd=true)**
+2. **[Pre-Entrega 2](https://docs.google.com/document/d/16YlD9URnvxOpOLftrEv61Av6-UKGgP3aC1ugYcx2j0c/edit?usp=sharing)** 
 
 ¡Gracias por explorar mi proyecto! 
