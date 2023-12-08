@@ -9,25 +9,51 @@ El objetivo principal de esta base de datos es proporcionar una herramienta efic
 ## Tablas Principales
 
 1. **Alumnos**
-2. **Usuarios** 
-3. **Materiales**
-4. **Movimientos** 
-5. **Cursos**
-6. **Terminos Básicos**
-7. **Registros de Imc**
-8. **Registros de Peso**
-9. **Registros de Rm**
-10. **Registros de Consultas**
+2. **Asistencias**
+3. **Cursos**
+4. **Entrenadores**
+5. **InventarioMaquinas**
+6. **Materiales**
+7. **Movimientos**
+8. **Pagos**
+9. **Registros de Consultas**
+10. **Registros de IMC**
+11. **Registros de Peso**
+12. **Registros de RM**
+13. **Rutinas**
+14. **TerminosBasicos**
+15. **Usuarios**
 
 ## Estructura del Repositorio
 
 - **`ProyectoCoder.sql`:** Contiene el script SQL para la creación de las tablas en la base de datos y la inserción de datos.
-- **`7 - B - Script de creación de vistas.sql`:** Contiene la creación de vistas en la base de datos.
-- **`8 - A - Script de creación de stored procedures.sql`:** Contiene la creación de stored procedures.
-- **`8 - B - Script de creación de Funciones.sql`:** Contiene funciones SQL específicas para el proyecto.
+
+- **`7 - B - Script de creación de vistas.sql`:** Contiene la creación de vistas en la base de datos, las cuales son las siguientes: 
+1. **AlumnosActivos**
+2. **Consultas**
+3. **Material**
+4. **Movimiento**
+5. **Terminos**
+6. **VistaAlumnosUltimoPago**
+7. **VistaMaquinasActivas**
+
+- **`8 - A - Script de creación de stored procedures.sql`:** Contiene la creación de stored procedures en la base de datos, los cuales son los siguientes: 
+1. **BuscarRegistrosPesoPorDNI**
+2. **BuscarRegistrosPesoPorDNIConOrden**
+3. **GestionarInsercionMovimientos**
+4. **GestionarTransaccion**
+5. **InsertarRegistroPesoPorDNI**
+
+- **`8 - B - Script de creación de Funciones.sql`:** Contiene funciones SQL específicas para el proyecto, las cuales son: 
+1. **CountMovimientos**
+2. **ObtenerUltimoPesoPorDNI**
+
 - **`9 - Script de creación de triggers.sql`:** Script que implementa triggers para registrar insercion y cambios de datos en ciertas tablas.
+
 - **`10 - A - Implementación de Sentencias.sql`:** Script con el cual se crean dos usuarios: uno con permiso de sólo lectura y el otro permisos de Lectura, Inserción y Modificación de datos.
+
 - **`10 - B - Sentencias del sublenguaje TCL.sql`:** Script con el cual se realizan modificaciones en ciertas tablas utilizando transacciones.
+
 - **`11 - A - Backup de la base de datos.sql`:** Script con el backup de la base de datos del proyecto, incluyendo en éste solamente las tablas.
 
 
