@@ -51,3 +51,17 @@ WHERE subquery.rn = 1;
 SELECT * FROM Vista_Alumnos_Ultimo_Pago;
 
 
+
+-- Crear vista que muestre las máquinas activas en el gimnasio
+CREATE VIEW Vista_Maquinas_Activas AS
+SELECT
+    `id_maquina`,
+    `nombre`,
+    `fecha_ingreso`
+FROM
+    `InventarioMaquinas`
+WHERE
+    `fecha_egreso` IS NULL; -- Solo muestra las máquinas sin fecha de egreso
+
+-- Mostrar datos de la vista
+SELECT * FROM Vista_Maquinas_Activas;
