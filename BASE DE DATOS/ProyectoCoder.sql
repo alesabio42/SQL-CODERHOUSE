@@ -38,7 +38,7 @@ CREATE TABLE `alumnos` (
   `clase` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   PRIMARY KEY (`id_alumno`),
   UNIQUE KEY `dni_UNIQUE` (`dni`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,8 +47,38 @@ CREATE TABLE `alumnos` (
 
 LOCK TABLES `alumnos` WRITE;
 /*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES (1,'MARTINEZ','ALEJANDRO','1991-08-02','M','76567876','A','2022-10-05 18:55:00','2023-03-08 00:13:09','SOLTERO','2 PM'),(3,'GUSTAVO','GERMAN','2001-11-13','M','43712371','A','2022-10-05 00:00:00','2023-03-08 01:42:36','SOLTERO','9 AM'),(4,'MULLER','TOMAS','1981-11-09','M','29953469','A','2022-10-05 00:00:00','2023-03-05 20:03:36','SOLTERO','10 AM'),(5,'MESSI','TOMAS','1993-11-26','M','37590532','A','2022-10-05 18:55:00','2023-03-05 20:04:13','CASADO','2 PM'),(6,'DEL HUERTO','SOPHIA','1985-02-20','M','12332144','A','2022-10-31 19:16:27','2023-03-05 20:04:43','CASADO','3 PM'),(9,'DEL PRADO','JOSE','1987-02-20','M','12332123','A','2022-10-31 19:31:46','2023-03-05 20:05:50','CASADO','11 AM'),(10,'SABIO','ALEJANDRO','1999-08-26','M','543342425','A','2023-02-24 22:16:52','2023-03-05 20:02:10','SOLTERO','10 AM'),(11,'SOSA','ALEJANDRO','1999-06-16','M','4202324','A','2023-02-27 19:34:41','2023-03-05 20:06:10','SOLTERO','9 AM'),(12,'ROBERTO','ALEJADNRO','2015-08-18','M','46372834','A','2023-02-27 19:52:53','2023-03-05 20:06:19','CASADO','8 AM'),(13,'DE PAUL','RODRIGO','2007-03-08','M','3454323','A','2023-02-28 23:05:58',NULL,'SOLTERO','9 AM'),(14,'DE LA FUENTE','IVAN','2006-02-09','M','35434553','A','2023-02-28 23:07:42','2023-02-28 23:07:55','SOLTERO','9 AM'),(15,'FODEN','JACK','2004-01-28','M','34543234','A','2023-03-04 11:26:55',NULL,'SOLTERO','9 AM'),(18,'GERMAN','BEZUS','2005-02-17','M','45665432','A','2023-03-05 13:34:33',NULL,'SOLTERO','10 AM'),(19,'RIQUELME','NACHO','1996-06-12','M','43543213','A','2023-03-07 22:49:34',NULL,'','3 PM');
+INSERT INTO `alumnos` VALUES (1,'MARTINEZ','ALEJANDRO','1991-08-02','M','76567876','A','2022-10-05 18:55:00','2023-03-08 00:13:09','SOLTERO','2 PM'),(3,'GUSTAVO','GERMAN','2001-11-13','M','43712371','A','2022-10-05 00:00:00','2023-03-08 01:42:36','SOLTERO','9 AM'),(4,'MULLER','TOMAS','1981-11-09','M','29953469','A','2022-10-05 00:00:00','2023-03-05 20:03:36','SOLTERO','10 AM'),(5,'MESSI','TOMAS','1993-11-26','M','37590532','A','2022-10-05 18:55:00','2023-03-05 20:04:13','CASADO','2 PM'),(6,'DEL HUERTO','SOPHIA','1985-02-20','M','12332144','A','2022-10-31 19:16:27','2023-03-05 20:04:43','CASADO','3 PM'),(9,'DEL PRADO','JOSE','1987-02-20','M','12332123','A','2022-10-31 19:31:46','2023-03-05 20:05:50','CASADO','11 AM'),(10,'SABIO','ALEJANDRO','1999-08-26','M','543342425','A','2023-02-24 22:16:52','2023-03-05 20:02:10','SOLTERO','10 AM'),(11,'SOSA','ALEJANDRO','1999-06-16','M','4202324','A','2023-02-27 19:34:41','2023-03-05 20:06:10','SOLTERO','9 AM'),(12,'ROBERTO','ALEJADNRO','2015-08-18','M','46372834','A','2023-02-27 19:52:53','2023-03-05 20:06:19','CASADO','8 AM'),(13,'DE PAUL','RODRIGO','2007-03-08','M','3454323','A','2023-02-28 23:05:58',NULL,'SOLTERO','9 AM'),(14,'DE LA FUENTE','IVAN','2006-02-09','M','35434553','A','2023-02-28 23:07:42','2023-02-28 23:07:55','SOLTERO','9 AM'),(15,'FODEN','JACK','2004-01-28','M','34543234','A','2023-03-04 11:26:55',NULL,'SOLTERO','9 AM'),(18,'GERMAN','BEZUS','2005-02-17','M','45665432','A','2023-03-05 13:34:33',NULL,'SOLTERO','10 AM'),(19,'RIQUELME','NACHO','1996-06-12','M','43543213','A','2023-03-07 22:49:34',NULL,'','3 PM'),(20,'GONZALEZ','MARIANO','1990-05-15','M','98765432','A','2023-11-09 20:30:58',NULL,'SOLTERO','1 PM');
 /*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Asistencias`
+--
+
+DROP TABLE IF EXISTS `Asistencias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Asistencias` (
+  `id_asistencia` int NOT NULL AUTO_INCREMENT,
+  `id_alumno` int NOT NULL,
+  `id_curso` int NOT NULL,
+  `fecha` date NOT NULL,
+  PRIMARY KEY (`id_asistencia`),
+  KEY `id_alumno` (`id_alumno`),
+  KEY `id_curso` (`id_curso`),
+  CONSTRAINT `asistencias_ibfk_1` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id_alumno`),
+  CONSTRAINT `asistencias_ibfk_2` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id_curso`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Asistencias`
+--
+
+LOCK TABLES `Asistencias` WRITE;
+/*!40000 ALTER TABLE `Asistencias` DISABLE KEYS */;
+INSERT INTO `Asistencias` VALUES (1,1,15,'2023-01-05'),(2,3,16,'2023-01-06'),(3,1,17,'2023-01-07'),(4,3,18,'2023-01-08'),(5,4,19,'2023-01-09'),(6,5,20,'2023-01-10');
+/*!40000 ALTER TABLE `Asistencias` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -76,6 +106,57 @@ INSERT INTO `curso` VALUES (15,'8 AM'),(16,'9 AM'),(17,'10 AM'),(18,'11 AM'),(19
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Entrenadores`
+--
+
+DROP TABLE IF EXISTS `Entrenadores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Entrenadores` (
+  `id_entrenador` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  `especialidad` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_entrenador`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Entrenadores`
+--
+
+LOCK TABLES `Entrenadores` WRITE;
+/*!40000 ALTER TABLE `Entrenadores` DISABLE KEYS */;
+INSERT INTO `Entrenadores` VALUES (1,'Alex González','Fuerza y acondicionamiento'),(2,'Emily Rodriguez','Cardio y resistencia'),(3,'Carlos Martínez','Yoga y flexibilidad');
+/*!40000 ALTER TABLE `Entrenadores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `InventarioMaquinas`
+--
+
+DROP TABLE IF EXISTS `InventarioMaquinas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `InventarioMaquinas` (
+  `id_maquina` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `fecha_ingreso` date NOT NULL,
+  `fecha_egreso` date DEFAULT NULL,
+  PRIMARY KEY (`id_maquina`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `InventarioMaquinas`
+--
+
+LOCK TABLES `InventarioMaquinas` WRITE;
+/*!40000 ALTER TABLE `InventarioMaquinas` DISABLE KEYS */;
+INSERT INTO `InventarioMaquinas` VALUES (1,'Máquina de pesas','2023-01-01',NULL),(2,'Cinta de correr','2023-02-15','2023-05-10'),(3,'Bicicleta estática','2023-03-10',NULL);
+/*!40000 ALTER TABLE `InventarioMaquinas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Materiales`
 --
 
@@ -96,7 +177,7 @@ CREATE TABLE `Materiales` (
 
 LOCK TABLES `Materiales` WRITE;
 /*!40000 ALTER TABLE `Materiales` DISABLE KEYS */;
-INSERT INTO `Materiales` VALUES (1,'Abmat','Almohadilla para apoyar lumbar a la hora de hacer abdominales.'),(2,'AssBike','Assault bike.'),(3,'Barbell','Barra olímpica.'),(4,'Bikerg','Bicicleta estática.'),(5,'DB','Dumbbell - Mancuerna.'),(6,'KB','Kettlebell - Pesa rusa.'),(7,'Ring','Anillas utilizadas para realizar movimientos gimnásticos.'),(8,'Rack','Estructura metálica para hacer los diferentes ejercicios de gimnasia: dominadas, T2B, etc.'),(9,'Row','Remo.'),(10,'Skierg','Esquiadora.');
+INSERT INTO `Materiales` VALUES (4,'Bikerg','Bicicleta estática.'),(5,'DB','Dumbbell - Mancuerna.'),(6,'KB','Kettlebell - Pesa rusa.'),(7,'Ring','Anillas utilizadas para realizar movimientos gimnásticos.'),(8,'Rack','Estructura metálica para hacer los diferentes ejercicios de gimnasia: dominadas, T2B, etc.'),(9,'Row','Remo.'),(10,'Skierg','Esquiadora.');
 /*!40000 ALTER TABLE `Materiales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +193,7 @@ CREATE TABLE `Movimientos` (
   `concepto` varchar(255) NOT NULL,
   `definicion` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,8 +202,36 @@ CREATE TABLE `Movimientos` (
 
 LOCK TABLES `Movimientos` WRITE;
 /*!40000 ALTER TABLE `Movimientos` DISABLE KEYS */;
-INSERT INTO `Movimientos` VALUES (1,'Arch Rock','Balanceo en posición de superman.'),(2,'BS','Back Squat - Sentadilla trasera con peso detrás de la nuca.'),(3,'BP','Bench Press - Press de banca.'),(4,'Box Jump','Salto al cajón.'),(5,'BRP','Burpee.'),(6,'CLN','Clean - Cargada. Consiste en llevar una carga desde el suelo hasta los hombros. Versiones adicionales incluyen: Hang Clean (HC)(Clean desde rodillas), Power Clean (PC), y Squat Clean (SC).'),(7,'C&J','Clean and Jerk - Cargada y envión. La unión de realizar un clean y seguidamente un Jerk.'),(8,'CTB / C2B','Chest to Bar - Pecho a la barra. Dominadas en las que debes tocar el rack con el pecho.'),(9,'DL','Deadlift - Peso muerto. Levanta un peso del suelo hasta la extensión completa de cadera.'),(10,'DU’s','Double Unders - Dos vueltas de la soga en un salto.'),(11,'FS','Front Squat - Sentadilla Frontal con el peso por delante.'),(12,'Hang','Colgado. En movimientos halterofilia, se utiliza cuando el movimiento (clean o snatch) comienza desde la rodilla o por encima de ella.'),(13,'Hollow','Ejercicio funcional que consiste en estar tumbados boca arriba, con piernas y brazos extendidos (brazos hacia atrás y a los lados de la cabeza) y levantados del suelo contrayendo zona abdominal.'),(14,'Hollow Rock','Balanceo en posición de hollow.'),(15,'HSPU','Hand Stand Push-Up - Pino flexión ó Parada de manos con flexión.'),(16,'K2E','Knees to Elbows - Consiste en estar colgados en la barra y llevar las rodillas a los codos.'),(17,'MU','Muscle Up - Movimientos combinados que encadenan un balanceo con un fondo de Tríceps (puede ser en anillas o en barra).'),(18,'OHS','Over Head Squat - Sentadilla con peso por encima de la cabeza.'),(19,'Pistol','Sentadilla a una pierna.'),(20,'PP','Push Press - Press de hombros con empuje. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza con un impulso con las piernas para empujarla hacia arriba. El movimiento termina con fuerza estricta de hombros.'),(21,'PJ','Push Jerk - Press con Envión. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza con un impulso con las piernas para empujarla hacia arriba y además, una ligera flexión de piernas al final del movimiento para recibir la barra desde más abajo para ayudarnos un poco más a levantarla.'),(22,'PU','Pull Up or Push Up - Dominadas o flexiones.'),(23,'Ring dips','fondos de tríceps en anillas'),(24,'Rope climb','escalar la cuerda con o sin ayuda de las piernas (Es el momento en el que todos nos sentimos bomberos).'),(25,'SDL','Sumo Deadlift - Peso Muerto en con las piernas en posición de sumo.'),(26,'SDHP','Sumo Deadlift High Pull - Consiste en realizar un peso muerto en posición de sumo, y luego de que la barra llegue a la cadera, realizar un empuje y tirar con los brazos la barra hasta la altura de la barbilla.'),(27,'SP','Shoulder Press - Press de hombros estrictos. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza únicamente con la fuerza estricta de tus hombros.'),(28,'SN','Snatch - Arrancada: Consiste en levantar la barra del suelo hasta arriba de la cabeza en un solo tiempo. Versiones adicionales incluyen, Hang Snatch (HS), Power Snatch (PS), y Squat Snatch (SS).'),(29,'Split Jerk','Envión. La técnica es similar al Push Jerk, con la diferencia que al momento de flexionar las piernas para terminar el movimiento, las piernas se mueven una hacia delante, y otra hacia atrás.'),(30,'SQ','Squat - Sentadilla.'),(31,'S-ups','Sit ups.'),(32,'SU’s','Single Unders - Una vuelta a la soga en un salto.'),(33,'Superman','Ejercicio funcional que consiste en estar tumbados boca abajo, con piernas y brazos extendidos y elevados lo más que se pueda para que no toquen suelo ni cuádriceps ni brazos.'),(34,'T2B','Toes to Bar - Consiste en estar colgados en la barra y toca la barra con los pies.'),(35,'V-ups','Abdominales en V.'),(36,'WBS','Wall Ball Shot - Lanzamiento de bola a la pared.'),(37,'Arch Rock','Balanceo en posición de superman.'),(38,'BS','Back Squat - Sentadilla trasera con peso detrás de la nuca.'),(39,'BP','Bench Press - Press de banca.'),(40,'Box Jump','Salto al cajón.'),(41,'BRP','Burpee.'),(42,'CLN','Clean - Cargada. Consiste en llevar una carga desde el suelo hasta los hombros. Versiones adicionales incluyen: Hang Clean (HC)(Clean desde rodillas), Power Clean (PC), y Squat Clean (SC).'),(43,'C&J','Clean and Jerk - Cargada y envión. La unión de realizar un clean y seguidamente un Jerk.'),(44,'CTB / C2B','Chest to Bar - Pecho a la barra. Dominadas en las que debes tocar el rack con el pecho.'),(45,'DL','Deadlift - Peso muerto. Levanta un peso del suelo hasta la extensión completa de cadera.'),(46,'DU’s','Double Unders - Dos vueltas de la soga en un salto.'),(47,'FS','Front Squat - Sentadilla Frontal con el peso por delante.'),(48,'Hang','Colgado. En movimientos halterofilia, se utiliza cuando el movimiento (clean o snatch) comienza desde la rodilla o por encima de ella.'),(49,'Hollow','Ejercicio funcional que consiste en estar tumbados boca arriba, con piernas y brazos extendidos (brazos hacia atrás y a los lados de la cabeza) y levantados del suelo contrayendo zona abdominal.'),(50,'Hollow Rock','Balanceo en posición de hollow.'),(51,'HSPU','Hand Stand Push-Up - Pino flexión ó Parada de manos con flexión.'),(52,'K2E','Knees to Elbows - Consiste en estar colgados en la barra y llevar las rodillas a los codos.'),(53,'MU','Muscle Up - Movimientos combinados que encadenan un balanceo con un fondo de Tríceps (puede ser en anillas o en barra).'),(54,'OHS','Over Head Squat - Sentadilla con peso por encima de la cabeza.'),(55,'Pistol','Sentadilla a una pierna.'),(56,'PP','Push Press - Press de hombros con empuje. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza con un impulso con las piernas para empujarla hacia arriba. El movimiento termina con fuerza estricta de hombros.'),(57,'PJ','Push Jerk - Press con Envión. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza con un impulso con las piernas para empujarla hacia arriba y además, una ligera flexión de piernas al final del movimiento para recibir la barra desde más abajo para ayudarnos un poco más a levantarla.'),(58,'PU','Pull Up or Push Up - Dominadas o flexiones.'),(59,'Ring dips','fondos de tríceps en anillas'),(60,'Rope climb','escalar la cuerda con o sin ayuda de las piernas (Es el momento en el que todos nos sentimos bomberos).'),(61,'SDL','Sumo Deadlift - Peso Muerto en con las piernas en posición de sumo.'),(62,'SDHP','Sumo Deadlift High Pull - Consiste en realizar un peso muerto en posición de sumo, y luego de que la barra llegue a la cadera, realizar un empuje y tirar con los brazos la barra hasta la altura de la barbilla.'),(63,'SP','Shoulder Press - Press de hombros estrictos. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza únicamente con la fuerza estricta de tus hombros.'),(64,'SN','Snatch - Arrancada: Consiste en levantar la barra del suelo hasta arriba de la cabeza en un solo tiempo. Versiones adicionales incluyen, Hang Snatch (HS), Power Snatch (PS), y Squat Snatch (SS).'),(65,'Split Jerk','Envión. La técnica es similar al Push Jerk, con la diferencia que al momento de flexionar las piernas para terminar el movimiento, las piernas se mueven una hacia delante, y otra hacia atrás.'),(66,'SQ','Squat - Sentadilla.'),(67,'S-ups','Sit ups.'),(68,'SU’s','Single Unders - Una vuelta a la soga en un salto.'),(69,'Superman','Ejercicio funcional que consiste en estar tumbados boca abajo, con piernas y brazos extendidos y elevados lo más que se pueda para que no toquen suelo ni cuádriceps ni brazos.'),(70,'T2B','Toes to Bar - Consiste en estar colgados en la barra y toca la barra con los pies.'),(71,'V-ups','Abdominales en V.'),(72,'WBS','Wall Ball Shot - Lanzamiento de bola a la pared.');
+INSERT INTO `Movimientos` VALUES (1,'Arch Rock','Nueva definición'),(2,'BS','Back Squat - Sentadilla trasera con peso detrás de la nuca.'),(3,'BP','Bench Press - Press de banca.'),(4,'Box Jump','Salto al cajón.'),(5,'BRP','Burpee.'),(6,'CLN','Clean - Cargada. Consiste en llevar una carga desde el suelo hasta los hombros. Versiones adicionales incluyen: Hang Clean (HC)(Clean desde rodillas), Power Clean (PC), y Squat Clean (SC).'),(7,'C&J','Clean and Jerk - Cargada y envión. La unión de realizar un clean y seguidamente un Jerk.'),(8,'CTB / C2B','Chest to Bar - Pecho a la barra. Dominadas en las que debes tocar el rack con el pecho.'),(9,'DL','Deadlift - Peso muerto. Levanta un peso del suelo hasta la extensión completa de cadera.'),(10,'DU’s','Double Unders - Dos vueltas de la soga en un salto.'),(11,'FS','Front Squat - Sentadilla Frontal con el peso por delante.'),(12,'Hang','Colgado. En movimientos halterofilia, se utiliza cuando el movimiento (clean o snatch) comienza desde la rodilla o por encima de ella.'),(13,'Hollow','Ejercicio funcional que consiste en estar tumbados boca arriba, con piernas y brazos extendidos (brazos hacia atrás y a los lados de la cabeza) y levantados del suelo contrayendo zona abdominal.'),(14,'Hollow Rock','Balanceo en posición de hollow.'),(15,'HSPU','Hand Stand Push-Up - Pino flexión ó Parada de manos con flexión.'),(16,'K2E','Knees to Elbows - Consiste en estar colgados en la barra y llevar las rodillas a los codos.'),(17,'MU','Muscle Up - Movimientos combinados que encadenan un balanceo con un fondo de Tríceps (puede ser en anillas o en barra).'),(18,'OHS','Over Head Squat - Sentadilla con peso por encima de la cabeza.'),(19,'Pistol','Sentadilla a una pierna.'),(20,'PP','Push Press - Press de hombros con empuje. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza con un impulso con las piernas para empujarla hacia arriba. El movimiento termina con fuerza estricta de hombros.'),(21,'PJ','Push Jerk - Press con Envión. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza con un impulso con las piernas para empujarla hacia arriba y además, una ligera flexión de piernas al final del movimiento para recibir la barra desde más abajo para ayudarnos un poco más a levantarla.'),(22,'PU','Pull Up or Push Up - Dominadas o flexiones.'),(23,'Ring dips','fondos de tríceps en anillas'),(24,'Rope climb','escalar la cuerda con o sin ayuda de las piernas (Es el momento en el que todos nos sentimos bomberos).'),(25,'SDL','Sumo Deadlift - Peso Muerto en con las piernas en posición de sumo.'),(26,'SDHP','Sumo Deadlift High Pull - Consiste en realizar un peso muerto en posición de sumo, y luego de que la barra llegue a la cadera, realizar un empuje y tirar con los brazos la barra hasta la altura de la barbilla.'),(27,'SP','Shoulder Press - Press de hombros estrictos. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza únicamente con la fuerza estricta de tus hombros.'),(28,'SN','Snatch - Arrancada: Consiste en levantar la barra del suelo hasta arriba de la cabeza en un solo tiempo. Versiones adicionales incluyen, Hang Snatch (HS), Power Snatch (PS), y Squat Snatch (SS).'),(29,'Split Jerk','Envión. La técnica es similar al Push Jerk, con la diferencia que al momento de flexionar las piernas para terminar el movimiento, las piernas se mueven una hacia delante, y otra hacia atrás.'),(30,'SQ','Squat - Sentadilla.'),(31,'S-ups','Sit ups.'),(32,'SU’s','Single Unders - Una vuelta a la soga en un salto.'),(33,'Superman','Ejercicio funcional que consiste en estar tumbados boca abajo, con piernas y brazos extendidos y elevados lo más que se pueda para que no toquen suelo ni cuádriceps ni brazos.'),(34,'T2B','Toes to Bar - Consiste en estar colgados en la barra y toca la barra con los pies.'),(35,'V-ups','Abdominales en V.'),(36,'WBS','Wall Ball Shot - Lanzamiento de bola a la pared.'),(37,'Arch Rock','Balanceo en posición de superman.'),(38,'BS','Back Squat - Sentadilla trasera con peso detrás de la nuca.'),(39,'BP','Bench Press - Press de banca.'),(40,'Box Jump','Salto al cajón.'),(41,'BRP','Burpee.'),(42,'CLN','Clean - Cargada. Consiste en llevar una carga desde el suelo hasta los hombros. Versiones adicionales incluyen: Hang Clean (HC)(Clean desde rodillas), Power Clean (PC), y Squat Clean (SC).'),(43,'C&J','Clean and Jerk - Cargada y envión. La unión de realizar un clean y seguidamente un Jerk.'),(44,'CTB / C2B','Chest to Bar - Pecho a la barra. Dominadas en las que debes tocar el rack con el pecho.'),(45,'DL','Deadlift - Peso muerto. Levanta un peso del suelo hasta la extensión completa de cadera.'),(46,'DU’s','Double Unders - Dos vueltas de la soga en un salto.'),(47,'FS','Front Squat - Sentadilla Frontal con el peso por delante.'),(48,'Hang','Colgado. En movimientos halterofilia, se utiliza cuando el movimiento (clean o snatch) comienza desde la rodilla o por encima de ella.'),(49,'Hollow','Ejercicio funcional que consiste en estar tumbados boca arriba, con piernas y brazos extendidos (brazos hacia atrás y a los lados de la cabeza) y levantados del suelo contrayendo zona abdominal.'),(50,'Hollow Rock','Balanceo en posición de hollow.'),(51,'HSPU','Hand Stand Push-Up - Pino flexión ó Parada de manos con flexión.'),(52,'K2E','Knees to Elbows - Consiste en estar colgados en la barra y llevar las rodillas a los codos.'),(53,'MU','Muscle Up - Movimientos combinados que encadenan un balanceo con un fondo de Tríceps (puede ser en anillas o en barra).'),(54,'OHS','Over Head Squat - Sentadilla con peso por encima de la cabeza.'),(55,'Pistol','Sentadilla a una pierna.'),(56,'PP','Push Press - Press de hombros con empuje. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza con un impulso con las piernas para empujarla hacia arriba. El movimiento termina con fuerza estricta de hombros.'),(57,'PJ','Push Jerk - Press con Envión. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza con un impulso con las piernas para empujarla hacia arriba y además, una ligera flexión de piernas al final del movimiento para recibir la barra desde más abajo para ayudarnos un poco más a levantarla.'),(58,'PU','Pull Up or Push Up - Dominadas o flexiones.'),(59,'Ring dips','fondos de tríceps en anillas'),(60,'Rope climb','escalar la cuerda con o sin ayuda de las piernas (Es el momento en el que todos nos sentimos bomberos).'),(61,'SDL','Sumo Deadlift - Peso Muerto en con las piernas en posición de sumo.'),(62,'SDHP','Sumo Deadlift High Pull - Consiste en realizar un peso muerto en posición de sumo, y luego de que la barra llegue a la cadera, realizar un empuje y tirar con los brazos la barra hasta la altura de la barbilla.'),(63,'SP','Shoulder Press - Press de hombros estrictos. Consiste en llevar la barra desde tus hombros hasta arriba de tu cabeza únicamente con la fuerza estricta de tus hombros.'),(64,'SN','Snatch - Arrancada: Consiste en levantar la barra del suelo hasta arriba de la cabeza en un solo tiempo. Versiones adicionales incluyen, Hang Snatch (HS), Power Snatch (PS), y Squat Snatch (SS).'),(65,'Split Jerk','Envión. La técnica es similar al Push Jerk, con la diferencia que al momento de flexionar las piernas para terminar el movimiento, las piernas se mueven una hacia delante, y otra hacia atrás.'),(66,'SQ','Squat - Sentadilla.'),(67,'S-ups','Sit ups.'),(68,'SU’s','Single Unders - Una vuelta a la soga en un salto.'),(69,'Superman','Ejercicio funcional que consiste en estar tumbados boca abajo, con piernas y brazos extendidos y elevados lo más que se pueda para que no toquen suelo ni cuádriceps ni brazos.'),(70,'T2B','Toes to Bar - Consiste en estar colgados en la barra y toca la barra con los pies.'),(71,'V-ups','Abdominales en V.'),(72,'WBS','Wall Ball Shot - Lanzamiento de bola a la pared.');
 /*!40000 ALTER TABLE `Movimientos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Pagos`
+--
+
+DROP TABLE IF EXISTS `Pagos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Pagos` (
+  `id_pago` int NOT NULL AUTO_INCREMENT,
+  `id_alumno` int NOT NULL,
+  `monto` decimal(8,2) NOT NULL,
+  `fecha` date NOT NULL,
+  PRIMARY KEY (`id_pago`),
+  KEY `id_alumno` (`id_alumno`),
+  CONSTRAINT `pagos_ibfk_1` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id_alumno`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Pagos`
+--
+
+LOCK TABLES `Pagos` WRITE;
+/*!40000 ALTER TABLE `Pagos` DISABLE KEYS */;
+INSERT INTO `Pagos` VALUES (1,1,1000.00,'2023-01-05'),(2,3,1000.00,'2023-01-05'),(3,3,1000.00,'2023-11-11'),(4,1,1000.00,'2023-11-11');
+/*!40000 ALTER TABLE `Pagos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -149,6 +258,7 @@ CREATE TABLE `registros_de_consultas` (
 
 LOCK TABLES `registros_de_consultas` WRITE;
 /*!40000 ALTER TABLE `registros_de_consultas` DISABLE KEYS */;
+INSERT INTO `registros_de_consultas` VALUES (1,'alejandro','alejandrosabio@gmail.com','HORARIOS','Quisiera saber en que horarios atiende el gimnasio?','2023-12-08 01:29:11');
 /*!40000 ALTER TABLE `registros_de_consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -167,7 +277,7 @@ CREATE TABLE `registros_de_imc` (
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
   CONSTRAINT `registros_de_imc_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,7 +286,7 @@ CREATE TABLE `registros_de_imc` (
 
 LOCK TABLES `registros_de_imc` WRITE;
 /*!40000 ALTER TABLE `registros_de_imc` DISABLE KEYS */;
-INSERT INTO `registros_de_imc` VALUES (11,11,26.0,'2023-02-02'),(12,11,31.0,'2023-03-06');
+INSERT INTO `registros_de_imc` VALUES (11,11,27.0,'2023-02-02'),(12,11,31.0,'2023-03-06'),(14,11,25.5,'2023-03-08');
 /*!40000 ALTER TABLE `registros_de_imc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -195,7 +305,7 @@ CREATE TABLE `registros_de_peso` (
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
   CONSTRAINT `registros_de_peso_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,7 +314,7 @@ CREATE TABLE `registros_de_peso` (
 
 LOCK TABLES `registros_de_peso` WRITE;
 /*!40000 ALTER TABLE `registros_de_peso` DISABLE KEYS */;
-INSERT INTO `registros_de_peso` VALUES (9,11,82.0,'2023-02-02'),(12,11,67.0,'2023-03-02');
+INSERT INTO `registros_de_peso` VALUES (9,11,80.0,'2023-02-02'),(12,11,67.0,'2023-03-02'),(13,11,70.5,'2023-03-10'),(14,11,75.0,'2023-03-08'),(15,11,75.0,'2023-03-08'),(16,11,70.5,'2023-03-10');
 /*!40000 ALTER TABLE `registros_de_peso` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,6 +345,32 @@ LOCK TABLES `registros_de_rm` WRITE;
 /*!40000 ALTER TABLE `registros_de_rm` DISABLE KEYS */;
 INSERT INTO `registros_de_rm` VALUES (12,11,'PULL UPS','200 REPETICIONES','2023-03-02');
 /*!40000 ALTER TABLE `registros_de_rm` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Rutinas`
+--
+
+DROP TABLE IF EXISTS `Rutinas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Rutinas` (
+  `id_rutina` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` text,
+  `fecha_creacion` datetime NOT NULL,
+  PRIMARY KEY (`id_rutina`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Rutinas`
+--
+
+LOCK TABLES `Rutinas` WRITE;
+/*!40000 ALTER TABLE `Rutinas` DISABLE KEYS */;
+INSERT INTO `Rutinas` VALUES (1,'Rutina de Cardio','Ejercicios de cardio para mejorar la resistencia.','2023-01-10 08:00:00'),(2,'Rutina de Fuerza','Entrenamiento de fuerza para desarrollar músculos.','2023-02-15 10:30:00'),(3,'Rutina de Flexibilidad','Ejercicios para mejorar la flexibilidad y movilidad.','2023-03-20 15:45:00'),(4,'Rutina de Full Body','Trabajo completo del cuerpo en una sesión.','2023-04-25 12:20:00');
+/*!40000 ALTER TABLE `Rutinas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -294,14 +430,6 @@ LOCK TABLES `usuarios` WRITE;
 INSERT INTO `usuarios` VALUES (11,'alesabio10','$2b$10$WRN7peegTQyC9iTA2UBB0OWzozHmonHIfFRjnZxqSMFMYttNodSEO','alejandrosabio15@gmail.com','Sabio Bezus Alejandro','A','2023-02-24 21:59:25',NULL),(12,'alegerman','$2b$10$ZsPMk5iTJAuhM0y2CRkYuOvASVGeDKaMnj9fBHTh6TWCiFeIItXLa','alejandrosabio@icloud.com','ALEJANDRO GERMAN','A','2023-03-07 21:00:18',NULL),(13,'leomessi','$2b$10$ayt6K.bnvqV08Ia0GjSe2O4bMPtMCvktdKhOpXAURqNlg.sEgZugS','leomessi@gmail.com','LEO MESSI','A','2023-03-08 01:36:11',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'proyecto-coder'
---
-
---
--- Dumping routines for database 'proyecto-coder'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -312,4 +440,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-26 20:36:07
+-- Dump completed on 2023-12-07 22:34:32
