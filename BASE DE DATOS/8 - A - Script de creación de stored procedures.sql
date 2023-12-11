@@ -137,7 +137,7 @@ END;
 
 DELIMITER ;
 
-CALL InsertarRegistroPesoPorDNI('PEPE', 70.5, '2023-03-10');
+CALL InsertarRegistroPesoPorDNI('12345676', 70.5, '2023-03-10');
 
 
 
