@@ -50,11 +50,11 @@ DELIMITER ;
 -- PASO 1
 -- Insertar un nuevo alumno
 INSERT INTO alumnos (apellido, nombre, fecha_nacimiento, sexo, dni, estado, fecha_creacion, estado_civil, clase)
-VALUES ('GONZALEZ', 'MARIANO', '1990-05-15', 'M', '98765432', 'A', NOW(), 'SOLTERO', '1 PM');
+VALUES ('CARLOS', 'JUAN', '1990-05-15', 'M', '12344321', 'A', NOW(), 'SOLTERO', '1 PM');
 
 -- PASO 2
 -- Actualizar el estado civil de un alumno
-UPDATE alumnos SET estado_civil = 'CASADO' WHERE id_alumno = 5;
+UPDATE alumnos SET estado_civil = 'SOLTERO' WHERE id_alumno = 5;
 
 -- PASO 3
 -- Verificar el registro en la tabla de log
@@ -131,11 +131,11 @@ ALTER TABLE log_registros MODIFY COLUMN operacion VARCHAR(50);
 
 -- EJEMPLOS DE PRUEBA
 -- Insertar un nuevo registro en registros_de_imc
-INSERT INTO registros_de_imc (usuario_id, imc, fecha) VALUES (11, 25.5, '2023-03-08');
+INSERT INTO registros_de_imc (usuario_id, imc, fecha) VALUES (11, 35.5, '2023-04-09');
 
 
 -- Insertar un nuevo registro en registros_de_peso
-INSERT INTO registros_de_peso (usuario_id, peso, fecha) VALUES (11, 75.0, '2023-03-08');
+INSERT INTO registros_de_peso (usuario_id, peso, fecha) VALUES (11, 70.0, '2023-04-09');
 
 
 -- Actualizar el registro de peso para el usuario 11 con id 9
