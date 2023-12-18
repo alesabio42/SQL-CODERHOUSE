@@ -63,7 +63,7 @@ Para acceder a las Pre-Entregas del Proyecto Final, las cuales cuentan con infor
 
 1. **[Pre-Entrega 1](https://docs.google.com/document/d/1msX8u_Xc83Zj-JVa2dURqtcH3dKcBjHX/edit?usp=sharing&ouid=113864567810544868681&rtpof=true&sd=true)**
 2. **[Pre-Entrega 2](https://docs.google.com/document/d/16YlD9URnvxOpOLftrEv61Av6-UKGgP3aC1ugYcx2j0c/edit?usp=sharing)**
-3. **[Proyecto Final](https://docs.google.com/document/d/1w8o1piL9l9cTHegAIKH_GGjERrHknMQ7cjMpNpO077U/edit?usp=drive_link)** 
+3. **[Proyecto Final](https://docs.google.com/document/d/1w8o1piL9l9cTHegAIKH_GGjERrHknMQ7cjMpNpO077U/edit?usp=sharing)** 
 
 
 ¡Gracias por explorar mi proyecto! 
