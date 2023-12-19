@@ -1,6 +1,7 @@
 -- //////////////////////TRABAJANDO CON LA TABLA "ALUMNOS"/////////////////////////--
 
-
+-- PASO 1 - CREAR 
+DROP TABLE IF EXISTS `log_alumnos`;
 CREATE TABLE `log_alumnos` (
   `id_log` int NOT NULL AUTO_INCREMENT,
   `id_alumno` int NOT NULL,
@@ -17,8 +18,7 @@ CREATE TABLE `log_alumnos` (
     ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
--- Trigger BEFORE INSERT
+-- PASO 2 - EJECUTAR SCRIPT (Trigger BEFORE INSERT)
 -- Este trigger se ejecutará antes de insertar un nuevo registro en la tabla alumnos. 
 -- Registrará el usuario, la fecha y la hora de la operación en la tabla log_alumnos.
 DELIMITER //
@@ -32,8 +32,7 @@ END;
 //
 DELIMITER ;
 
-
--- Trigger AFTER UPDATE
+-- PASO 3 - EJECUTAR SCRIPT (Trigger AFTER UPDATE)
 -- Este trigger se ejecutará después de actualizar un registro en la tabla alumnos. 
 -- Registrará el usuario, la fecha y la hora de la operación en la tabla log_alumnos.
 DELIMITER //
@@ -47,34 +46,33 @@ END;
 //
 DELIMITER ;
 
--- PASO 1
--- Insertar un nuevo alumno
+-- PASO 4 - Insertar un nuevo alumno
 INSERT INTO alumnos (apellido, nombre, fecha_nacimiento, sexo, dni, estado, fecha_creacion, estado_civil, clase)
 VALUES ('CARLOS', 'JUAN', '1990-05-15', 'M', '12344321', 'A', NOW(), 'SOLTERO', '1 PM');
 
--- PASO 2
--- Actualizar el estado civil de un alumno
+-- PASO 5 - Actualizar el estado civil de un alumno
 UPDATE alumnos SET estado_civil = 'SOLTERO' WHERE id_alumno = 5;
 
--- PASO 3
--- Verificar el registro en la tabla de log
+-- PASO 6 - Verificar el registro en la tabla de log
 SELECT * FROM log_alumnos;
 
 
 
 -- //////////////////////TRABAJANDO CON LA TABLAS "PESO" Y "IMC" /////////////////////////--
+
+-- PASO 1 - CREAR TABLA
 DROP TABLE IF EXISTS `log_registros`;
 CREATE TABLE `log_registros` (
   `id_log` int NOT NULL AUTO_INCREMENT,
   `tabla_afectada` varchar(20) NOT NULL,
-  `operacion` varchar(10) NOT NULL,
+  `operacion` varchar(50) NOT NULL,
   `usuario` varchar(45) NOT NULL,
   `fecha` date NOT NULL,
   `hora` time NOT NULL,
   PRIMARY KEY (`id_log`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- 1- Trigger para registros_de_imc:
+-- PASO 2 - EJECUTAR SCRIPT (Trigger para registros_de_imc)
 -- Este trigger se ejecutará al realizar una inserción o actualización en la tabla registros_de_imc. 
 -- Registrará en la tabla de log los detalles de la operación.
 
@@ -100,7 +98,7 @@ END;
 //
 DELIMITER ;
 
--- 2- Trigger para registros_de_peso:
+-- PASO 3 - EJECUTAR SCRIPT (Trigger para registros_de_peso)
 -- Este trigger se ejecutará al realizar una inserción o actualización en la tabla registros_de_peso. 
 -- Registrará en la tabla de log los detalles de la operación.
 
@@ -126,25 +124,23 @@ END;
 //
 DELIMITER ;
 
-ALTER TABLE log_registros MODIFY COLUMN operacion VARCHAR(50);
 
-
--- EJEMPLOS DE PRUEBA
--- Insertar un nuevo registro en registros_de_imc
+-- PASO 4 - EJEMPLOS DE PRUEBA
+-- 1 - Insertar un nuevo registro en registros_de_imc
 INSERT INTO registros_de_imc (usuario_id, imc, fecha) VALUES (11, 35.5, '2023-04-09');
 
 
--- Insertar un nuevo registro en registros_de_peso
+-- 2 - Insertar un nuevo registro en registros_de_peso
 INSERT INTO registros_de_peso (usuario_id, peso, fecha) VALUES (11, 70.0, '2023-04-09');
 
 
--- Actualizar el registro de peso para el usuario 11 con id 9
+-- 3 - Actualizar el registro de peso para el usuario 11 con id 9
 UPDATE registros_de_peso SET peso = 80.0 WHERE id = 9 AND usuario_id = 11;
 
--- Actualizar el registro de IMC para el usuario 11 con id 11
+-- 4 - Actualizar el registro de IMC para el usuario 11 con id 11
 UPDATE registros_de_imc SET imc = 27.0 WHERE id = 11 AND usuario_id = 11;
 
--- Consultar los registros en log_registros
+-- 5 - Corroborar los registros en log_registros
 SELECT * FROM log_registros;
 
 
