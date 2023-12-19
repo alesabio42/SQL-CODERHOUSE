@@ -1,4 +1,9 @@
 -- -----------------------------------------------TABLA NUMERO 1----------------------------------------------------
+
+-- PASO 1 - VERIFICAR LOS REGISTROS EN LA TABLA DE MATERIALES
+SELECT * FROM `proyecto-coder`.materiales;
+
+-- PASO 2 - EJECUTAR EL SIGUEINTE SCRIPT 
 DELIMITER //
 CREATE PROCEDURE gestionar_transaccion()
 BEGIN
@@ -14,7 +19,7 @@ BEGIN
         -- INSERT INTO Materiales_backup SELECT * FROM Materiales WHERE id IN (1, 2, 3);
         
         -- Eliminar algunos registros
-        DELETE FROM Materiales WHERE id IN (1, 2, 3);
+        DELETE FROM Materiales WHERE id IN (4, 5, 6);
     ELSE
         -- Si la tabla Materiales no tiene registros, realizar inserción
         INSERT INTO Materiales (concepto, definicion) VALUES ('NuevoMaterial', 'Definición del nuevo material');
@@ -30,13 +35,19 @@ BEGIN
     END //
 DELIMITER ;
 
-
--- Llamar al procedimiento almacenado para gestionar la transacción
+-- PASO 3 - Llamar al procedimiento almacenado para gestionar la transacción
 CALL gestionar_transaccion();
 
+-- PASO 4 - VERIFICAR LOS REGISTROS EN LA TABLA DE MATERIALES
+SELECT * FROM `proyecto-coder`.materiales;
 
 
 -- -----------------------------------------------TABLA NUMERO 2----------------------------------------------------
+
+-- PASO 1 - VERIFICAR LOS REGISTROS EN LA TABLA DE MOVIMIENTOS
+SELECT * FROM `proyecto-coder`.movimientos;
+
+-- PASO 2 - EJECUTAR EL SIGUEINTE SCRIPT 
 DELIMITER //
 CREATE PROCEDURE gestionar_insercion_movimientos()
 BEGIN
@@ -76,14 +87,15 @@ BEGIN
 --     ROLLBACK;
 
     -- Comentario: Sentencia COMMIT (descomentar si todos los cambios son correctos)
---     COMMIT;
+  -- COMMIT;
 
 END //
 
 DELIMITER ;
 
--- Iniciar la transacción y realizar inserciones
+-- PASO 3 - Iniciar la transacción y realizar inserciones
 CALL gestionar_insercion_movimientos();
 
-
+-- PASO 4 - VERIFICAR LOS REGISTROS EN LA TABLA DE MOVIMIENTOS
+SELECT * FROM `proyecto-coder`.movimientos;
 
