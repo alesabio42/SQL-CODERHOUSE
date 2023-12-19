@@ -1,3 +1,5 @@
+-- //////////////////////////////////////FUNCION 1/////////////////////////////////////////--
+
 -- FUNCION PARA CONTAR CUANTOS MOVIMIENTOS HAY EN LA TABLA DE MOVIMIENTOS
 DELIMITER //
 CREATE FUNCTION CountMovimientos() RETURNS INT
@@ -12,6 +14,8 @@ DELIMITER ;
 
 SELECT CountMovimientos();
 
+
+-- //////////////////////////////////////FUNCION 2/////////////////////////////////////////--
 
 -- FUNCION PARA SABER CUAL ES EL ULTIMO PESO REGISTRADO SEGUN NUMERO DE DNI
 DELIMITER //
@@ -32,5 +36,3 @@ DELIMITER ;
 
 
 SELECT ObtenerUltimoPesoPorDNI('4202324');
-
-
