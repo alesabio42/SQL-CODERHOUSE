@@ -25,7 +25,12 @@ El objetivo principal de esta base de datos es proporcionar una herramienta efic
 15. **Usuarios**
 
 ## Estructura del Repositorio
+El repositorio de GitHub para el Proyecto Coder se compone de 3 carpetas:
+1. **Documentacion Tecnica:** Contiene informacion tecnica adicional sobre el proyecto.
+2. **Documentacion de Usuarios:** Proporciona la documentacion del proyecto destinada a los usuarios.
+3. **Script de Implementacion:** Contiene scripts necesarios para instalar la base de datos.
 
+### Estructura del Repositorio
 - **`ProyectoCoder.sql`:** Contiene el script SQL para la creación de las tablas en la base de datos y la inserción de datos.
 
 - **`7 - B - Script de creación de vistas.sql`:** Contiene la creación de vistas en la base de datos, las cuales son las siguientes: 
