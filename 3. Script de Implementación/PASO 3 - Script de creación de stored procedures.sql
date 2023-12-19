@@ -1,3 +1,6 @@
+
+-- //////////////////////////////////////STORED PROCEDURES 1/////////////////////////////////////////--
+
 -- CREACION DE UN PROCEDIMIENTO ALMACENADO QUE BUSCA REGISTRO DE PESO POR DNI 
 -- Debido a la sugerencia del tutor, se agregan mensajes de error --
 DELIMITER //
@@ -30,9 +33,10 @@ END //
 DELIMITER ;
 
 
-CALL BuscarRegistrosPesoPorDNI('PEPE');
+CALL BuscarRegistrosPesoPorDNI('4202324');
 
 
+-- //////////////////////////////////////STORED PROCEDURES 2/////////////////////////////////////////--
 
 -- CREACION DE UN PROCEDIMIENTO ALMACENADO QUE BUSCA REGISTRO DE PESO POR DNI Y SE PUEDE ORDENAR DE FORMA DESCENDENTE O ASCENDENTE
 
@@ -94,20 +98,15 @@ END;
 DELIMITER ;
 
 
-
 CALL BuscarRegistrosPesoPorDNIConOrden('4202324', 'fecha', 'ASC');
 CALL BuscarRegistrosPesoPorDNIConOrden('4202324', 'fecha', 'DESC');
 
 
-
-
-
-
+-- //////////////////////////////////////STORED PROCEDURES 3/////////////////////////////////////////--
 
 -- CREACION DE UN PROCEDIMIENTO ALMACENADO QUE INSERTA UN REGISTRO DE PESO SEGUN EL DNI DE LA PERSONA 
 
 DELIMITER //
-
 -- Procedimiento: InsertarRegistroPesoPorDNI
 CREATE PROCEDURE InsertarRegistroPesoPorDNI(IN dniAlumno VARCHAR(45), IN peso DECIMAL(4, 1), IN fecha DATE)
 BEGIN
@@ -137,7 +136,7 @@ END;
 
 DELIMITER ;
 
-CALL InsertarRegistroPesoPorDNI('12345676', 70.5, '2023-03-10');
+CALL InsertarRegistroPesoPorDNI('4202324', 70.5, '2023-03-10');
 
 
 
