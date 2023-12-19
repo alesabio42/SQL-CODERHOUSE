@@ -25,10 +25,15 @@ El objetivo principal de esta base de datos es proporcionar una herramienta efic
 15. **Usuarios**
 
 ## Estructura del Repositorio
+El repositorio de GitHub para el Proyecto Coder se compone de 3 carpetas:
+1. **Documentacion Tecnica:** Contiene informacion tecnica adicional sobre el proyecto.
+2. **Documentacion de Usuarios:** Proporciona la documentacion del proyecto destinada a los usuarios.
+3. **Script de Implementacion:** Contiene scripts necesarios para instalar la base de datos.
 
-- **`ProyectoCoder.sql`:** Contiene el script SQL para la creación de las tablas en la base de datos y la inserción de datos.
+### Script de Implementacion:
+- **`PASO 1 - ProyectoCoder.sql`:** Contiene el script SQL para la creación de las tablas en la base de datos y la inserción de datos.
 
-- **`7 - B - Script de creación de vistas.sql`:** Contiene la creación de vistas en la base de datos, las cuales son las siguientes: 
+- **`PASO 2 - Script de creación de vistas.sql`:** Contiene la creación de vistas en la base de datos, las cuales son las siguientes: 
 1. **AlumnosActivos**
 2. **Consultas**
 3. **Material**
@@ -37,24 +42,22 @@ El objetivo principal de esta base de datos es proporcionar una herramienta efic
 6. **VistaAlumnosUltimoPago**
 7. **VistaMaquinasActivas**
 
-- **`8 - A - Script de creación de stored procedures.sql`:** Contiene la creación de stored procedures en la base de datos, los cuales son los siguientes: 
+- **`PASO 3 - Script de creación de stored procedures.sql`:** Contiene la creación de stored procedures en la base de datos, los cuales son los siguientes: 
 1. **BuscarRegistrosPesoPorDNI**
 2. **BuscarRegistrosPesoPorDNIConOrden**
 3. **GestionarInsercionMovimientos**
 4. **GestionarTransaccion**
 5. **InsertarRegistroPesoPorDNI**
 
-- **`8 - B - Script de creación de Funciones.sql`:** Contiene funciones SQL específicas para el proyecto, las cuales son: 
+- **`PASO 4 - Script de creación de Funciones.sql`:** Contiene funciones SQL específicas para el proyecto, las cuales son: 
 1. **CountMovimientos**
 2. **ObtenerUltimoPesoPorDNI**
 
-- **`9 - Script de creación de triggers.sql`:** Script que implementa triggers para registrar insercion y cambios de datos en ciertas tablas.
+- **`PASO 5 - Script de creación de triggers.sql`:** Script que implementa triggers para registrar insercion y cambios de datos en ciertas tablas.
 
-- **`10 - A - Implementación de Sentencias.sql`:** Script con el cual se crean dos usuarios: uno con permiso de sólo lectura y el otro permisos de Lectura, Inserción y Modificación de datos.
+- **`PASO 6 - Implementación de Sentencias.sql`:** Script con el cual se crean dos usuarios: uno con permiso de sólo lectura y el otro permisos de Lectura, Inserción y Modificación de datos.
 
-- **`10 - B - Sentencias del sublenguaje TCL.sql`:** Script con el cual se realizan modificaciones en ciertas tablas utilizando transacciones.
-
-- **`11 - A - Backup de la base de datos.sql`:** Script con el backup de la base de datos del proyecto, incluyendo en éste solamente las tablas.
+- **`PASO 7 - Sentencias del sublenguaje TCL.sql`:** Script con el cual se realizan modificaciones en ciertas tablas utilizando transacciones.
 
 
 ## Pre-entregas del Proyecto Final
