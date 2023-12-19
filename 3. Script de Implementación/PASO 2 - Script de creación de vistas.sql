@@ -1,20 +1,24 @@
+-- //////////////////////////////////////VISTA 1/////////////////////////////////////////--
 CREATE VIEW material AS
  (SELECT concepto, definicion FROM materiales);
 SELECT * FROM Material;
 
-
+-- //////////////////////////////////////VISTA 2/////////////////////////////////////////--
 CREATE VIEW movimiento AS
  (SELECT concepto, definicion FROM movimientos);
 SELECT * FROM movimiento;
 
+-- //////////////////////////////////////VISTA 3/////////////////////////////////////////--
 CREATE VIEW terminos AS
  (SELECT concepto, definicion FROM TerminosBasicos);
 SELECT * FROM terminos;
 
+-- //////////////////////////////////////VISTA 4/////////////////////////////////////////--
 CREATE VIEW consultas AS
  (SELECT correo, mensaje FROM registros_de_consultas);
 SELECT * FROM consultas;
 
+-- //////////////////////////////////////VISTA 5/////////////////////////////////////////--
 CREATE VIEW alumnosactivos AS
  (SELECT apellido, nombre 
  FROM alumnos
@@ -23,6 +27,7 @@ CREATE VIEW alumnosactivos AS
 SELECT * FROM alumnosactivos;
 
 
+-- //////////////////////////////////////VISTA 6/////////////////////////////////////////--
 -- Creación de una vista que presenta información simplificada sobre los alumnos, mostrando su apellido, DNI, la fecha de su último pago y si dicho pago está activo o vencido
 CREATE VIEW Vista_Alumnos_Ultimo_Pago AS
 SELECT
@@ -52,6 +57,7 @@ SELECT * FROM Vista_Alumnos_Ultimo_Pago;
 
 
 
+-- //////////////////////////////////////VISTA 7/////////////////////////////////////////--
 -- Crear vista que muestre las máquinas activas en el gimnasio
 CREATE VIEW Vista_Maquinas_Activas AS
 SELECT
